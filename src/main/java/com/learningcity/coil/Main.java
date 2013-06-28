@@ -1,5 +1,9 @@
 package com.learningcity.coil;
 
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Yohan
@@ -10,5 +14,9 @@ package com.learningcity.coil;
 public class Main {
     public static void main(String[] args){
         System.out.println("Started");
+        ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
+
+        HelloWorld obj = (HelloWorld) context.getBean("helloBean");
+        System.out.println(obj.getMessage());
     }
 }
