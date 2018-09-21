@@ -7,7 +7,7 @@ class EditStyle {
         "Size: ${size}, Color: ${color}, Font: ${font}"
     }
 
-    def static main(String[] args) {
+    static void main(String[] args) {
         def tester = new EditStyle(size: 12, color: "Red", font: "Helvetica")
         println "Properties: ${tester.properties}"
     }
