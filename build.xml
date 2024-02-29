@@ -14,6 +14,15 @@
           <echo>${ant.project.name}</echo>
         </target>
 
+        <target name="runclass">
+          <exec executable="java" dir="${bin.dir}">
+            <arg value="${class}"/>
+            <arg value="${arg1}"/>
+            <arg value="${arg2}"/>
+            <arg value="${arg3}"/>
+          </exec>
+        </target>
+
         <target name="test">
           <java dir="${bin.dir}" fork="true" classname="coil.Hello" />
         </target>
