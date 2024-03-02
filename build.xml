@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="coil" default="compile" basedir=".">
+<project name="coil" default="run-class" basedir=".">
 
 	<property name="src.dir" location="src/main/java" />
 	<property name="bin.dir" location="bin" />
@@ -14,13 +14,12 @@
           <echo>${ant.project.name}</echo>
         </target>
 
-        <target name="runclass">
-          <exec executable="java" dir="${bin.dir}">
-            <arg value="${class}"/>
+        <target name="run-class">
+          <java dir="${bin.dir}" fork="true" classpathref="classpath" classname="${class}">
+            <arg value="${arg0}"/>
             <arg value="${arg1}"/>
             <arg value="${arg2}"/>
-            <arg value="${arg3}"/>
-          </exec>
+          </java>
         </target>
 
         <target name="test">
